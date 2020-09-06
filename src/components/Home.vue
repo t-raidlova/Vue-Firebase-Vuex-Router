@@ -35,7 +35,7 @@ h3 {
 .background-overlay {
   display: flex;
   flex-direction: column;
-  background: #f1e6da;
+  background: var(--bg-light);
   border-radius: 5px;
   opacity: 0.8;
   width: 50%;
