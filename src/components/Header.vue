@@ -37,12 +37,13 @@ h1 {
   font-size: 1.3em;
 }
 .header_logo {
+  color: var(--text-light);
   background-color: #21d4fd;
   background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
+  padding: 2rem 0;
 }
 .header_logo img {
   max-width: 25vw;
