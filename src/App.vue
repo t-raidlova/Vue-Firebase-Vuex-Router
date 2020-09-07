@@ -3,6 +3,11 @@
     <app-header />
     <!-- only top level routes -->
     <router-view></router-view>
+    <div class="info_block_wrapper">
+      <router-view name="history"></router-view>
+      <router-view name="ordering-guide"></router-view>
+      <router-view name="delivery"></router-view>
+    </div>
   </div>
 </template>
 
@@ -52,7 +57,6 @@ body {
   text-align: center;
   color: var(--text);
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -69,5 +73,51 @@ li {
 }
 span {
   margin: 0 5px;
+}
+input,
+textarea {
+  font-size: 1.1rem;
+}
+button {
+  border: none;
+  font-size: 1.1rem;
+}
+.info_block {
+  background: var(var(--bg-light));
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  h3 {
+    text-align: center;
+  }
+  img {
+    width: 30%;
+  }
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &_content {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .info_block {
+    width: 100%;
+    &_wrapper {
+      flex-direction: row;
+    }
+    &_content {
+      flex-direction: column;
+      align-items: center;
+    }
+    &:nth-child(2) {
+      margin: 10px;
+    }
+    &:nth-child(2) img {
+      order: -1;
+    }
+  }
 }
 </style>

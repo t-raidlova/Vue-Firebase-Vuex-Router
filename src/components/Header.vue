@@ -7,19 +7,19 @@
     <nav>
       <ul>
         <router-link :to="{ name: 'homeLink' }" tag="li">
-          <a>home</a>
+          <a>Home</a>
         </router-link>
-        <span>~</span>
+
         <router-link :to="{ name: 'menuLink' }" tag="li">
-          <a>menu</a>
+          <a>Menu</a>
         </router-link>
-        <span>~</span>
+
         <router-link :to="{ name: 'contactLink' }" tag="li">
-          <a>contact us</a>
+          <a>Contact</a>
         </router-link>
-        <span>~</span>
+
         <router-link :to="{ name: 'aboutLink' }" tag="li">
-          <a>about us</a>
+          <a>About</a>
         </router-link>
       </ul>
     </nav>
@@ -48,11 +48,11 @@ h1 {
 .header_logo img {
   max-width: 25vw;
 }
-ul {
-  padding: 10px 0;
-}
+
 li {
   display: inline-block;
+  padding: 0.8rem 1rem;
+  font-weight: 600;
 }
 @media screen and (min-width: 900px) {
   .header_logo img {

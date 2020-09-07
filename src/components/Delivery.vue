@@ -14,8 +14,7 @@
 </template>
 
 <script>
-// export default {
-//   name: 'delivery',
-// };
-//
+export default {
+  name: 'delivery',
+};
 </script>
