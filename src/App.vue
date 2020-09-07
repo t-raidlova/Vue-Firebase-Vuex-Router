@@ -1,24 +1,18 @@
 <template>
   <div id="app">
     <app-header />
-    <home />
-    <Admin />
+    <!-- only top level routes -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import Header from './components/Header';
-import Home from './components/Home';
-// import Menu from './components/Menu';
-import Admin from './components/Admin';
 
 export default {
   name: 'App',
   components: {
     appHeader: Header,
-    Home,
-    // Menu,
-    Admin,
   },
 };
 </script>
@@ -57,5 +51,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 0;
+  background: var(--bg-light);
+}
+li {
+  list-style: none;
+}
+span {
+  margin: 0 5px;
 }
 </style>

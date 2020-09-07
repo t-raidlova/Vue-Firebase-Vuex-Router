@@ -4,15 +4,19 @@
       <h2>Welcome to Pizza Planet!</h2>
       <img src="../assets/images/roller.png" alt="roller" />
       <h3>Feeling hungry?</h3>
-      <button class="order_btn">Order</button>
+      <button class="order_btn" @click="goToMenu">Order</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "home",
-  methods: {},
+  name: 'home',
+  methods: {
+    goToMenu() {
+      this.$router.push({ name: 'menuLink' });
+    },
+  },
 };
 </script>
 
@@ -23,7 +27,7 @@ h3 {
 }
 .background {
   background-image: linear-gradient(19deg, #21d5fdb4 0%, #b921ff8f 100%),
-    url("../assets/images/dough.jpg");
+    url('../assets/images/dough.jpg');
   background-size: cover;
   background-blend-mode: soft-light;
   background-position: center;
