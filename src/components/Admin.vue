@@ -3,9 +3,7 @@
     <div class="current_user_wrapper">
       <span>Logged in as:</span>
       {{ currentUser }}
-      <button type="button" class="btn_red" @click.prevent="signOut">
-        Sign out
-      </button>
+      <button type="button" class="btn_red" @click.prevent="signOut">Sign out</button>
     </div>
     <NewPizza />
     <div class="menu_wrapper">
@@ -17,9 +15,9 @@
             <th>Remove from menu</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody v-for="item in getMenuItems" :key="item.id">
           <tr>
-            <td>Margherita</td>
+            <td>{{item.name}}</td>
             <td>
               <button type="button" class="btn_red">&times;</button>
             </td>
@@ -28,7 +26,7 @@
       </table>
     </div>
     <div class="orders_wrapper">
-      <h3>Current orders (5):</h3>
+      <h3>Current orders ({{numberOfOrders}}):</h3>
       <table>
         <thead>
           <tr>
@@ -42,9 +40,7 @@
           <tr class="order_number">
             <th colspan="4">
               <strong>Order Number: 4</strong>
-              <button type="button" class="btn_red">
-                &times;
-              </button>
+              <button type="button" class="btn_red">&times;</button>
             </th>
           </tr>
           <tr>
@@ -61,14 +57,22 @@
 </template>
 
 <script>
-import NewPizza from './NewPizza';
-import Login from './Login';
-import { firebaseAuth } from '../firebase';
+import NewPizza from "./NewPizza";
+import Login from "./Login";
+import { firebaseAuth } from "../firebase";
 export default {
-  name: 'admin',
+  name: "admin",
   components: {
     NewPizza,
     Login,
+  },
+  computed: {
+    getMenuItems() {
+      return this.$store.getters.getMenuItems;
+    },
+    numberOfOrders() {
+      return this.$store.getters.numberOfOrders;
+    },
   },
   methods: {
     async signOut() {
