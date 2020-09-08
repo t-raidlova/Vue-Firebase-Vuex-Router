@@ -59,7 +59,7 @@
 <script>
 import NewPizza from "./NewPizza";
 import Login from "./Login";
-import { firebaseAuth } from "../firebase";
+import { store } from "../store/store";
 export default {
   name: "admin",
   components: {
@@ -73,14 +73,13 @@ export default {
     numberOfOrders() {
       return this.$store.getters.numberOfOrders;
     },
+    currentUser() {
+      return this.$store.getters.currentUser;
+    },
   },
   methods: {
     async signOut() {
-      try {
-        await firebaseAuth.signOut();
-      } catch (error) {
-        alert(`error signig out, ${error}`);
-      }
+      store.dispatch("signOut");
     },
   },
 };
