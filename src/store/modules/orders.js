@@ -1,0 +1,21 @@
+const state = {
+  orders: [],
+};
+
+const mutations = {
+  addOrder: (state, orders) => state.orders.push(orders),
+};
+
+const getters = {
+  numberOfOrders: (state) => state.orders.length,
+  getOrders: (state) => state.orders,
+};
+
+const actions = {};
+
+export default {
+  state,
+  mutations,
+  getters,
+  actions,
+};
