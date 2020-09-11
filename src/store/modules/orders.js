@@ -1,3 +1,6 @@
+import { firestoreAction } from 'vuexfire';
+import { dbOrdersRef } from '../../firebase';
+
 const state = {
   orders: [],
 };
@@ -11,7 +14,12 @@ const getters = {
   getOrders: (state) => state.orders,
 };
 
-const actions = {};
+const actions = {
+  // firebase sync
+  setOrdersRef: firestoreAction((context) => {
+    return context.bindFirestoreRef('orders', dbOrdersRef);
+  }),
+};
 
 export default {
   state,
